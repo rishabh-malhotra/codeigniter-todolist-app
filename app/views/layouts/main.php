@@ -28,6 +28,7 @@
 			<div class="span3">
 				<div class="well sidebar-nav">
 					<div style="margin: 0 0 10px 10px;">
+						<?php $this->load->view('users/login');   ?>
 						<!--SIDEBAR CONTENT-->
 					</div>
 				</div>
