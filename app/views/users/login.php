@@ -1,5 +1,6 @@
 <?php  $attributes=array('class'=> 'form-horizontal', 'id'=>'login_form'  );   ?>
-<?php echo form_open('user/login',$attributes); ?>
+<?php echo form_open('users/login',$attributes); ?>
+<h3>Login Form</h3>
 <p>
 	<?php echo form_label('Username:'); ?>
 	<?php $data=array('name'        => 'username',
