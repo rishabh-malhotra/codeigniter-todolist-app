@@ -23,13 +23,14 @@ class Users extends CI_Controller{
 public function login(){
 
 	$this->form_validation->set_rules('username','Username','trim|required|min_length[4]|xss_clean');      
-        $this->form_validation->set_rules('password','Password','trim|required|min_length[4]|max_length[50]|xss_clean');        
+     $this->form_validation->set_rules('password','Password','trim|required|min_length[4]|max_length[50]|xss_clean');        
         
-        if($this->form_validation->run() == FALSE){
+    if($this->form_validation->run() == FALSE){
             //Set error
-            $this->session->set_flashdata('login_failed', 'Sorry, the login info that you entered is invalid');
-            redirect('home/index');
-        } else {
+        $this->session->set_flashdata('login_failed', 'Sorry, the login info that you entered is invalid');
+        redirect('home/index');
+        } 
+        else {
            //Get from post
            $username = $this->input->post('username');
            $password = $this->input->post('password');
@@ -43,20 +44,30 @@ public function login(){
                $user_data = array(
                        'user_id'   => $user_id,
                        'username'  => $username,
-                       'logged_in' => true
+                       'logged_in' => TRUE
                 );
                 //Set session userdata
+               //$this->session->set_flashdata('login_success','You are now logged in');
                $this->session->set_userdata($user_data);
-				$this->session->set_flashdata('login_success','You are now logged in');
+               
+               
+				
 				redirect('home/index');
-		}
+		    }
 		else{
 			$this->session->set_flashdata('login_failed','Sorry, the login info you entered is invalid');
-			redirect('home/index');
+			redirect('home/index'); 
+			}
 		}
-	}
 }
 
-//public function log
+public function logout(){
+	//unset session data
+	$this->session->unset_userdata('user_id');
+	$this->session->unset_userdata('username');
+	$this->session->unset_userdata('logged_in');
+	$this->session->sess_destroy();
+	redirect('home/index');
+}
 
 }

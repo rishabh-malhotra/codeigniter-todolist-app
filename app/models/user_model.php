@@ -17,7 +17,7 @@ class User_model extends CI_Model
 		return $insert;
 	}
 
-	public function login_user($username,$pasoword){
+	public function login_user($username,$password){
         //Secure password
         $enc_password = md5($password);
         
