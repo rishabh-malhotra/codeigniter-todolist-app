@@ -47,7 +47,7 @@ public function login(){
                        'logged_in' => TRUE
                 );
                 //Set session userdata
-               //$this->session->set_flashdata('login_success','You are now logged in');
+               $this->session->set_flashdata('login_success','You are now logged in');
                $this->session->set_userdata($user_data);
                
                
@@ -67,6 +67,7 @@ public function logout(){
 	$this->session->unset_userdata('username');
 	$this->session->unset_userdata('logged_in');
 	$this->session->sess_destroy();
+	
 	redirect('home/index');
 }
 

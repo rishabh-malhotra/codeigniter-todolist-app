@@ -21,6 +21,9 @@
 					</p>
 					<ul class="nav">
 						<li><a href="<?php echo base_url();?>">Home</a></li>
+						<?php if($this->session->userdata('logged_in')) : ?>
+							<li><a href="<?php echo base_url();?>lists">My Lists</a></li>
+						<?php endif; ?>
 					</ul>
 				</div><!--/.nav-collapse -->
 			</div>
