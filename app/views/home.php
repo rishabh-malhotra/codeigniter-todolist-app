@@ -5,7 +5,7 @@
     <p class="alert alert-dismissable alert-success"><?php print_r($this->session->flashdata('login_success'));?></p>
 <?php endif; ?>
 <?php if($this->session->flashdata('noaccess')) : ?>
-    <p class="alert alert-dismissable alert-success"><?php print_r($this->session->flashdata('noaccess'));?></p>
+    <p class="alert alert-dismissable alert-danger"><?php print_r($this->session->flashdata('noaccess'));?></p>
 <?php endif; ?>
 
 
