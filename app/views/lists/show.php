@@ -25,7 +25,7 @@ Created On: <strong><?php echo date("n-j-Y",strtotime($list->create_date)); ?></
 <br><br>
 <div style="max-width: 500px;"><?php echo $list->list_body; ?></div>
 <br><br>
-<h4> Current Open Tasks</h4>
+<h4> Active Tasks</h4>
 <?php if($completed_tasks) : ?>
     <ul>
     <?php foreach($completed_tasks as $task) : ?>
@@ -33,10 +33,10 @@ Created On: <strong><?php echo date("n-j-Y",strtotime($list->create_date)); ?></
     <?php endforeach; ?>
     </ul>
 <?php else : ?>
-    <p>There are no current tasks</p>
+    <p>There are no active tasks</p>
 <?php endif; ?>
 <br />
-<h4> Recently Completed</h4>
+<h4> Completed Tasks</h4>
 <?php if($uncompleted_tasks) : ?>
     <ul>
     <?php foreach($uncompleted_tasks as $task) : ?>

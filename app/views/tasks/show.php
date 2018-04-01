@@ -23,5 +23,5 @@
 </ul><br />
 <div style="max-width:500px;"><?php echo $task->task_body; ?></div>
 <br /><hr />
-<!--<- Go Back to <a href="<?php echo base_url(); ?>lists/show/<?php echo $task->list_id; ?>"><?php echo $task->list_name; ?></a>-->
+<- Go Back to <a href="<?php echo base_url(); ?>lists/show/<?php echo $task->list_id; ?>"><?php echo $task->list_name; ?></a>
 

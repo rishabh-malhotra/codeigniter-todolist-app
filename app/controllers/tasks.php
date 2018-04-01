@@ -61,6 +61,14 @@
            }
         }
     }
+
+    public function delete($list_id,$task_id){
+    	$this->Task_model->delete_task($task_id);
+    	$this->session->set_flashdata('task_deleted','Your task has been deleted');
+    	redirect('lists/show/'.$list_id.'');
+    }
+
+    
 	}
 
 
